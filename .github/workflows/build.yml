@@ -4,22 +4,40 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    # Checkout the code
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+    # Setup NodeJS 
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 18
 
+    # Install dependencies
       - name: Install Dependencies
         run: npm install
+
+    # Run lint checks
+      - name: Run lint checks
+        run: npm run lint
+
+    # Run type checks
+      - name: Run type checks
+        run: npm run type-check
+
+    # code formatting with Prettier
+      - name: Check code formatting
+        run: npm run prettier-check
 
       - name: Build
         run: npm run build
