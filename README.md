@@ -8,6 +8,7 @@
 * [Introduction](#introduction)
 * [Features](#features)
 * [Installation](#installation)
+* [Continuous Integration (CI)](#continuous_integration)
 * [Usage](#usage)
 * [Contributing](#contribution)
 <!-- License -->
@@ -31,6 +32,32 @@ To set up the CNCG Delhi website locally, following are the steps:
 `npm install`
 * Start the development server: 
  `npm run dev`
+
+## Continuous Integration (CI) <a name="continuous_integration"></a>
+
+Our repository uses GitHub Actions to automate code validation and build processes. 
+
+### Workflow Details
+1. **Lint Checks:** Ensures code quality and detects issues using ESLint.
+2. **Type Checks:** Verifies TypeScript types to prevent runtime errors.
+3. **Code Formatting:** Checks adherence to the Prettier style guide.
+4. **Build Validation:** Confirms that the project builds successfully without errors.
+
+### Trigger
+The workflow runs automatically:
+- On every push to the `main` branch.
+- On every pull request targeting the `main` branch.
+
+### Failing Workflow
+If any step fails, the workflow blocks the merge until the issue is resolved. Ensure all checks pass before merging.
+
+### Commands for Local Validation
+Run the following commands locally before pushing code:
+- `npm run lint`
+- `npm run type-check`
+- `npm run prettier-check`
+- `npm run build`
+
 ## Usage <a name="usage"></a>
 The CNCG Delhi website is designed to be user-friendly. Simply navigate through the menu options to explore different sections of the website. You can register for membership, browse upcoming events, access resources, and engage with the community through forums.
 
