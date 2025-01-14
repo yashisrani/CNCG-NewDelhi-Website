@@ -1,6 +1,8 @@
 import "./Card.css";
-import devtron from "../images/devtron.png";
-import microsoft from "../images/microsoft.png";
+// import devtron from "../images/devtron.png";
+import devtron from "../images/new_devtron.png"
+// import microsoft from "../images/microsoft.png";
+import  microsoft  from "../images/new-microsoft.png";
 import tata from "../images/tata 1 mg.png";
 import epam from "../images/epam.png";
 export const Sponsors = () => {
@@ -15,10 +17,10 @@ export const Sponsors = () => {
         </h2>
         <div className="p-4 rounded-lg shadow-lg grid sm:grid-cols-1 md:grid-cols-2 gap-20">
           <div className="card ease-in-out ">
-            <img src={devtron} className="img pt-8"></img>
+            <img src={devtron} className="img pt-2 pr-1"></img>
           </div>
           <div className="card ease-in-out ">
-            <img src={microsoft} className="img pt-8"></img>
+            <img src={microsoft} className="img pt-4 pr-1"></img>
           </div>
           <div className="card ease-in-out ">
             <img src={tata} className="img"></img>
